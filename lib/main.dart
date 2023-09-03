@@ -1,6 +1,5 @@
-import 'package:demo_provider_class/routes/all_contacts_page.dart';
-import 'package:demo_provider_class/routes/detailed_contact_page.dart';
-import 'package:demo_provider_class/routes/new_contact.dart';
+import 'package:demo_provider_class/view/all_contacts_page.dart';
+import 'package:demo_provider_class/view/new_contact.dart';
 import 'package:demo_provider_class/routes_constants/routes.dart';
 import 'package:demo_provider_class/services/contact_provider.dart';
 import 'package:flutter/material.dart';
@@ -17,16 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => ContactProvider() ,
+      create: (_) => ContactProvider(),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.grey,
           ),
           routes: {
-            homePage :(context) => const AllContactsPage(),
-            newContact :(context) =>  const NewContactPage(),
-            detailedPage :(context) => const DetailedContact(),
+            homePage: (context) => const AllContactsPage(),
+            newContact: (context) => const NewContactPage(),
           },
           home: const AllContactsPage()),
     );
